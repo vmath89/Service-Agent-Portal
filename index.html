@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Service Agent Portal</title>
+  </head>
+
+  <body ng-controller="DashboardCtrl as dash" style="width:90%; margin:0 auto">
+    <nav class="navbar navbar-inverse" style="color = green">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#/"><b style = "font-size: 25px;">Service Agent Portal</b></a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav navbar-right">
+            <li ng-class='{active: dash.isSelectedMain(1)}'>
+              <a href="#/" ng-click='dash.selectTabMain(1)'><span class="glyphicon glyphicon-home"></span>Home</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="row">
+      <div class="col-sm-2">
+        <ul class="nav nav-pills nav-stacked">
+          <li role="presentation" ng-class='{active: dash.isSelectedMain(1)}'>
+            <a href="#/dashboard" ng-click='dash.selectTabMain(1)'>Dashboard</a>
+          </li>
+          <li role="presentation" ng-class='{active: dash.isSelectedMain(2)}'>
+            <a href="#/schedule" ng-click='dash.selectTabMain(2)'>Schedule</a>
+          </li>
+          <li role="presentation" ng-class='{active: dash.isSelectedMain(3)}'>
+            <a href="#/profile" ng-click='dash.selectTabMain(3)'>Profile</a>
+          </li>
+          <li role="presentation" ng-class='{active: dash.isSelectedMain(4)}'>
+            <a href="#/support" ng-click='dash.selectTabMain(4)'>Support</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-10">
+        <ng-view></ng-view>
+      </div>
+    </div>
+    
+    <link rel="stylesheet" href="style.css" />
+    <script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.8/angular.js" data-semver="1.4.8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-route.min.js"></script>
+    <script src="scripts/module/app.js"></script>
+    <script src="scripts/controllers/dashboardCtrl.js"></script>
+    <script src="scripts/services/CallService.js"></script>
+    <script src="scripts/services/EmailService.js"></script>
+    <script src="scripts/services/PersonService.js"></script>
+    <script src="scripts/config/config.js"></script>
+  </body>
+
+</html>

@@ -1,0 +1,95 @@
+
+
+<div class="row" ng-controller = 'DashboardCtrl as dash1'>
+  <div class="col-sm-4">
+
+  	<div class="panel panel-primary" >
+	      	<div class="panel-heading">{{dash.nameSelected}}</div>
+	      	<div class="panel-body">
+	      		<div class="row">
+			      <div class="col-sm-4">
+			        <ul class="nav nav-pills nav-stacked">
+			          <li role="presentation" ng-class='{active: dash.isSelected(1)}'>
+			            <a href="" ng-click='dash.selectTab(1)'>Services</a>
+			          </li>
+			          <li role="presentation" ng-class='{active: dash.isSelected(2)}'>
+			            <a href="" ng-click='dash.selectTab(2)'>Account</a>
+			          </li>
+			          <li role="presentation" ng-class='{active: dash.isSelected(3)}'>
+			            <a href="" ng-click='dash.selectTab(3)'>Payments</a>
+			          </li>
+			        </ul>
+			      </div>
+			      <div class="col-sm-8">
+			      		<div class='panel' ng-show='dash.isSelected(1)'>
+							<h4>Services</h4>
+							<p></p>
+						</div>
+						<div class='panel' ng-show='dash.isSelected(2)'>
+							<h4>Account</h4>
+							<ul class="list-group" ng-repeat='res in dash.result_person[dash.num].account'>
+								  <li class="list-group-item">{{res}}</li>
+								   
+							</ul>
+						</div>
+						<div class='panel' ng-show='dash.isSelected(3)'>
+							<h4>Payments</h4>
+							<p></p>
+						</div>
+			      </div>
+			    </div>
+	      	</div>
+    </div>
+
+  	</div>
+  <div class="col-sm-4">
+  		<div class="panel panel-primary" >
+	      	<div class="panel-heading">Current Issue</div>
+	      	<div class="panel-body">
+	      		<form name='issueForm' ng-submit='issueForm.$valid && dash.issue()'>
+			      	<div class="form-group">
+						  <label for="title">Title</label>
+						  <input type="text" class="form-control" id="title" placeholder = 'Title of the issue' required ng-model = 'dash.issueTitle'>
+					</div>
+					<div class="form-group">
+						  <label for="comment" style="margin:0 auto">Summary</label>
+						  <textarea class="form-control" rows="5" id="summary" placeholder = 'Summary of the issue' ng-model = 'dash.issueSummary' required></textarea>
+					</div>
+					<div class='form-group'>
+						<input type="submit" class="btn btn-success"  value= 'Save' >
+					</div>	
+				</form>
+			</div>
+    	</div>
+  </div>
+  <div class="col-sm-4">
+  		<div class="panel panel-primary" >
+	      	<div class="panel-heading">Setup Followup</div>
+	      	<div class="panel-body">	        
+				            <form name='followupForm' ng-submit='followupForm.$valid && dash.followup()'>
+					            <div class="form-group" >
+					       			<label for="title">Date</label>
+					                <div class='input-group time' id='timepicker'>
+					                    <input type='date' class="form-control"  required ng-model = 'dash.followupDate' />
+					                    <span class="input-group-addon">
+					                        <span class="glyphicon glyphicon-calendar"></span>
+					                    </span>
+					                </div>
+					            </div>
+					       		<div class="form-group">
+					       			<label for="title">Time</label>
+					                <div class='input-group time' id='timepicker'>
+					                    <input type='time' class="form-control" required ng-model = 'dash.followupTime'/>
+					                    <span class="input-group-addon">
+					                        <span class="glyphicon glyphicon-time"></span>
+					                    </span>
+					                </div>
+					            </div>
+					            <div class='form-group'>
+									<input type="submit" class="btn btn-success"  value= 'Save' >
+								</div>
+							</form>
+	      	</div>
+    	</div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+{"persons":[
+	
+		{"name":"Mr A Rao", "services":"No Services", "account":["Voice", "Data", "Cable"], "payments":"No Payments"},
+		{"name":"Mrs S Ramani", "services":"No Services", "account":["Cable", "Data", "Voice"], "payments":"No Payments"},
+		{"name":"Mr A Reddy", "services":"No Services", "account":["Acc1", "Acc2", "Acc3"], "payments":"No Payments"},
+		{"name":"Mr A Raoappa", "services":"No Services", "account":["Data", "Cable", "Voice"], "payments":"No Payments"},
+		{"name":"Mr Mukesh Shah", "services":"No Services", "account":["Voice", "Cable", "Data"], "payments":"No Payments"},
+		{"name":"Mrs S Ramani", "services":"No Services", "account":["Acc4", "Acc5", "Acc6"], "payments":"No Payments"},
+		{"name":"Mr Venkatesh", "services":"No Services", "account":["Data", "Cable", "Voice"], "payments":"No Payments"},
+		{"name":"Mr M.K. Sahani", "services":"No Services", "account":["Acc7", "Acc8", "Acc9"], "payments":"No Payments"}
+		
+	]
+}
